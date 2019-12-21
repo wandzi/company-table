@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: #397EFD;
+}
+.header > h1 {
+    font-size: 1.3rem;
+    color: #fffbe0;
+}
+.header > .input-container > input {
+    padding: 6px;
+    color: #397EFD;
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.fa-search {
+    margin: 0px 5px;
+    color: #FFFFFF;
+}

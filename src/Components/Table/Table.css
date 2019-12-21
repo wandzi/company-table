@@ -1,0 +1,23 @@
+.table {
+    width: 100%;
+    height: 100%;
+    color: #397EFD;
+    background: #FFFFFF;
+    font-size: 0.7rem;
+}
+.overflow {
+  overflow-x: auto;
+  padding-top: 55px;
+}
+.table {
+  width: 100vw;
+  color: #397EFD;
+  background-color: #FFFFFF;
+}
+.table > thead {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+tr {
+  border: 1px solid #397EFD;
+}
