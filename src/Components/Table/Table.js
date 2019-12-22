@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CompanyTotalIncome from '../CompanyTotalIncome/CompanyTotalIncome';
 import './Table.css';
 import axios from 'axios';
 
@@ -7,7 +8,6 @@ class Table extends Component {
       super(props);
       this.state = {
         companies: null,
-        companiesIncomes: null,
       }
   }
     
@@ -18,22 +18,17 @@ class Table extends Component {
     })
   }
 
-  getCompanyIncomes(company) {
-    axios.get(`https://recruitment.hal.skygate.io/incomes/${company.id}`)
-    .then(res => {
-        // this.setState({companiesIncomes: res.data});   
-    })
-  }
-
   render() {
     const CompaniesRow = this.state.companies && this.state.companies.map( company => {
-        this.getCompanyIncomes(company);
         return (
-            <tr key={company.id}>
-                <th>{company.id}</th>
-                <th>{company.name}</th>
-                <th>{company.city}</th>
-            </tr>
+          <tr key={company.id}>
+              <th>{company.id}</th>
+              <th>{company.name}</th>
+              <th>{company.city}</th>
+              <CompanyTotalIncome companyID={company.id}/>
+              <th>Average income</th>
+              <th>Last month income</th>
+          </tr>
         )
     })
     return (
@@ -41,12 +36,12 @@ class Table extends Component {
             <table className="table">
             <thead>
                 <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Cities</th>
-                <th>Total income</th>
-                <th>Average income</th>
-                <th>Last month income</th>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Cities</th>
+                  <th>Total income</th>
+                  <th>Average income</th>
+                  <th>Last month income</th>
                 </tr>
             </thead>
                 {CompaniesRow}

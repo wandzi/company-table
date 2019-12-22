@@ -3,17 +3,18 @@
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    position: fixed;
+    position: sticky;
     top: 0;
-    background-color: #397EFD;
+    left: 0;
+    background-color: #065DFF;
 }
 .header > h1 {
     font-size: 1.3rem;
-    color: #fffbe0;
+    color: #FFFFFF;
 }
 .header > .input-container > input {
     padding: 6px;
-    color: #397EFD;
+    color: #065DFF;
     border: 1px solid #FFFFFF;
     border-radius: 15px;
     outline: none;
