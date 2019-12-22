@@ -23,14 +23,11 @@ class CompanyIncome extends Component {
     }
 
     render() {
-        let incomes = this.state.companiesIncome;
-        let totalIncomes = incomes.reduce(function(prev, cur) {
-            return prev + cur.value;
-          }, 0);
-          
+        const incomes = this.state.companiesIncome;
+       //  console.log(incomes);
         return(
             <>
-                    <th>{totalIncomes}</th>
+                    <th>Total income</th>
             </>
         )
     }

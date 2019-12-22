@@ -5,10 +5,14 @@ import axios from 'axios';
 
 class Table extends Component {
   constructor(props){
-      super(props);
-      this.state = {
-        companies: null,
+    super(props);
+    this.state = {
+      companies: null,
+      direction: {
+        id: 'asc',
       }
+    }
+    this.sortBy = this.sortById.bind(this);
   }
     
   componentDidMount() {   
@@ -18,10 +22,25 @@ class Table extends Component {
     })
   }
 
+  sortById() {
+    this.setState({
+      companies: this.state.companies.sort( (a, b) => (
+        this.state.direction.id === 'asc'
+        ? a.id - b.id
+        : b.id - a.id
+      )),
+      direction: {
+        id: this.state.direction.id === 'asc'
+        ? 'desc'
+        : 'asc'
+      }
+    })
+  }
+
   render() {
     const CompaniesRow = this.state.companies && this.state.companies.map( company => {
         return (
-          <tr key={company.id}>
+          <tr>
               <th>{company.id}</th>
               <th>{company.name}</th>
               <th>{company.city}</th>
@@ -32,21 +51,21 @@ class Table extends Component {
         )
     })
     return (
-        <div className="">
-            <table className="table">
-            <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Cities</th>
-                  <th>Total income</th>
-                  <th>Average income</th>
-                  <th>Last month income</th>
-                </tr>
-            </thead>
-                {CompaniesRow}
-            </table>
-        </div> 
+      <table className="table">
+      <thead>
+          <tr>
+            <th onClick={() => this.sortById()}> 
+              ID
+            </th>
+            <th>Name</th>
+            <th>Cities</th>
+            <th>Total income</th>
+            <th>Average income</th>
+            <th>Last month income</th>
+          </tr>
+      </thead>
+          {CompaniesRow}
+      </table>
     );
   }  
 }
