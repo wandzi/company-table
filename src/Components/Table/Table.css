@@ -5,9 +5,6 @@
     background: #FFFFFF;
     font-size: 0.7rem;
 }
-.overflow {
-  overflow-x: auto;
-}
 .table {
   width: 100vw;
   color: #065DFF;
@@ -16,7 +13,4 @@
 .table > thead {
   font-size: 0.78rem;
   font-weight: bold;
-}
-tr {
-  border: 1px solid #065DFF;
 }

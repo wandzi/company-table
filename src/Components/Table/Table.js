@@ -32,7 +32,7 @@ class Table extends Component {
         )
     })
     return (
-        <div className="overflow">
+        <div className="">
             <table className="table">
             <thead>
                 <tr>
