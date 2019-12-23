@@ -3,9 +3,20 @@
   height: 100%;
   color: #065DFF;
   background: #FFFFFF;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
+  cursor: default;
 }
 .table > thead {
   font-size: 0.78rem;
   font-weight: bold;
+  cursor: pointer;
+  background-color: #E4E4E4;
+  outline: none;
+}
+tr {
+  border: none;
+}
+.hover-row:hover {
+background-color: #BEBEBE;
+color: #FFFFFF;
 }

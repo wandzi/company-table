@@ -1,12 +1,17 @@
 import React from 'react';
 import './Header.css';
 
-function Header() {
+function Header(props) {
     return (
         <header className="header">
             <h1>Company Table</h1>
             <div className="input-container">
-                <input type="text"/><i className="fas fa-search"></i>
+                <i className="fas fa-search"></i>
+                <input 
+                    type="text"
+                    placeholder="Filter..."
+                    onChange={props.inputOnChange}
+                />
             </div>
         </header>
     )
