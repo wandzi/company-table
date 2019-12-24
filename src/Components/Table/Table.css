@@ -17,6 +17,6 @@ tr {
   border: none;
 }
 .hover-row:hover {
-background-color: #BEBEBE;
-color: #FFFFFF;
+  background-color: #AFAFAF;
+  color: #FFFFFF;
 }

@@ -7,22 +7,28 @@ class Table extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+     
     }
   }
 
-
   render() {
-    
-    const companiesRowList = this.props.companies && this.props.companies.map( company => {
-      return (
-        <tr className="hover-row" key={company.id}>
-            <th>{company.id}</th>
-            <th>{company.name}</th>
-            <th>{company.city}</th>
-        </tr>
-      )
-    })
+    const { companies, filter} = this.props;
+
+    const companiesRowList = companies && companies
+      .filter( company => {
+        return company.name.indexOf(filter) >= 0
+      })
+      .map( company => {
+        return (
+
+          <tr className="hover-row" key={company.id}>
+              <th>{company.id}</th>
+              <th>{company.name}</th>
+              <th>{company.city}</th>
+          </tr>
+
+        );
+      });
 
     return (
       <table className="table">
