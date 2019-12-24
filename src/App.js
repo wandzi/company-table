@@ -13,11 +13,13 @@ class App extends Component {
       companies: null,
       direction: {
         id: 'asc',
+        categoryAscending: true,
       },
       filter: '',
     }
     this.inputFilter = this.inputFilter.bind(this);
     this.sortById = this.sortById.bind(this);
+    this.sortByAlphabeticalOrder = this.sortByAlphabeticalOrder.bind(this);
   }
   
   componentDidMount() {   
@@ -46,6 +48,23 @@ class App extends Component {
     })
   }
 
+  sortByAlphabeticalOrder(key) {
+    this.setState({
+      companies: this.state.companies.sort( (a, b) => {
+        let textA = a[key].toUpperCase();
+        let textB = b[key].toUpperCase();
+        if (this.state.direction.categoryAscending === true) {
+          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+        } else {
+          return (textA > textB) ? -1 : (textA < textB) ? 1 : 0;
+        }
+      }),
+      direction: {
+        categoryAscending: !this.state.direction.categoryAscending,
+      }
+    })
+  }
+
   render() {
     return (
       <div>
@@ -57,6 +76,7 @@ class App extends Component {
           direction={this.state.direction} 
           filter={this.state.filter} 
           sortById={this.sortById} 
+          sortByAlphabeticalOrder={this.sortByAlphabeticalOrder} 
         />
       </div>
     )

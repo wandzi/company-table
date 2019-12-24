@@ -6,21 +6,22 @@ import './Table.css';
 class Table extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+
+    }
   }
+
 
   render() {
     
     const companiesRowList = this.props.companies && this.props.companies.map( company => {
-        return (
-          <tr className="hover-row" key={company.id}>
-              <th>{company.id}</th>
-              <th>{company.name}</th>
-              <th>{company.city}</th>
-              <CompanyTotalIncome companyID={company.id}/>
-              <th>Average income</th>
-              <th>Last month income</th>
-          </tr>
-        )
+      return (
+        <tr className="hover-row" key={company.id}>
+            <th>{company.id}</th>
+            <th>{company.name}</th>
+            <th>{company.city}</th>
+        </tr>
+      )
     })
 
     return (
@@ -28,11 +29,8 @@ class Table extends Component {
         <thead>
             <tr>
               <th onClick={this.props.sortById}>ID</th>
-              <th>Name</th>
-              <th>Cities</th>
-              <th>Total income</th>
-              <th>Average income</th>
-              <th>Last month income</th>
+              <th onClick={() => this.props.sortByAlphabeticalOrder('name')}>Name</th>
+              <th onClick={() => this.props.sortByAlphabeticalOrder('city')}>Cities</th>
             </tr>
         </thead>
         {companiesRowList}
