@@ -20,6 +20,14 @@ class CompanyLastMonthIncome extends Component {
     }
     
     render() {
+        const currentDate = new Date();
+        const month = currentDate.getMonth();
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        while (currentDate.getMonth() === month) {
+            currentDate.setDate(currentDate.getDate() - 1);
+        }
+        console.log(currentDate.toISOString());
+        const totalIncome = this.state.companiesIncome && this.state.companiesIncome;
         return(
             <>
                 <th>-</th>
