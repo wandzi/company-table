@@ -22,7 +22,7 @@ class App extends Component {
     this.sortByAlphabeticalOrder = this.sortByAlphabeticalOrder.bind(this);
   }
   
-  componentDidMount() {   
+  componentWillMount() {   
     axios.get("https://recruitment.hal.skygate.io/companies")
     .then(res => {
       this.setState({companies: res.data});

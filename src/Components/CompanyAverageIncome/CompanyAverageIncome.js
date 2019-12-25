@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class CompanyTotalIncome extends Component {
+class CompanyAverageIncome extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -21,14 +21,15 @@ class CompanyTotalIncome extends Component {
     
     render() {
         const totalIncome = this.state.companiesIncome && this.state.companiesIncome.reduce(function(prev, cur) {
-            return parseInt(prev) + parseInt(cur.value) ;
+            return parseInt(prev) + parseInt(cur.value);
           }, 0);
+        const averageIncome = this.state.companiesIncome && totalIncome / this.state.companiesIncome.length;
         return(
             <>
-                <th>{totalIncome}</th>
+                <th>{averageIncome}</th>
             </>
         )
     }
 }
 
-export default CompanyTotalIncome
+export default CompanyAverageIncome

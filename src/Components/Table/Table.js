@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import CompanyTotalIncome from '../CompanyTotalIncome/CompanyTotalIncome';
+import CompanyAverageIncome from '../CompanyAverageIncome/CompanyAverageIncome';
+import CompanyLastMonthIncome from '../CompanyLastMonthIncome/CompanyLastMonthIncome';
 import './Table.css';
 
 
@@ -25,6 +27,9 @@ class Table extends Component {
               <th>{company.id}</th>
               <th>{company.name}</th>
               <th>{company.city}</th>
+              <CompanyTotalIncome companyID={company.id}/>
+              <CompanyAverageIncome companyID={company.id}/>
+              <CompanyLastMonthIncome companyID={company.id}/>
           </tr>
 
         );
@@ -37,6 +42,9 @@ class Table extends Component {
               <th onClick={this.props.sortById}>ID</th>
               <th onClick={() => this.props.sortByAlphabeticalOrder('name')}>Name</th>
               <th onClick={() => this.props.sortByAlphabeticalOrder('city')}>Cities</th>
+              <th>Total income</th>
+              <th>Average income</th>
+              <th>Company last month income</th>
             </tr>
         </thead>
         {companiesRowList}
