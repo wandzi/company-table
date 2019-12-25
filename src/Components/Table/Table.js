@@ -16,7 +16,7 @@ class Table extends Component {
 
     const companiesRowList = companies && companies
       .filter( company => {
-        return company.name.indexOf(filter) >= 0
+        return [company.name.toLowerCase().indexOf(filter.toLowerCase()) && company.city.toLowerCase().indexOf(filter.toLowerCase())]  >= 0
       })
       .map( company => {
         return (
