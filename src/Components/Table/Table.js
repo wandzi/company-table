@@ -4,7 +4,6 @@ import CompanyAverageIncome from '../CompanyAverageIncome/CompanyAverageIncome';
 import CompanyLastMonthIncome from '../CompanyLastMonthIncome/CompanyLastMonthIncome';
 import './Table.css';
 
-
 class Table extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,7 @@ class Table extends Component {
      
     }
   }
-
+  
   render() {
     const { companies, filter} = this.props;
 

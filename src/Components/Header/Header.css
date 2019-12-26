@@ -30,3 +30,16 @@
     margin: 0px 10px;
     color: #FFFFFF;
 }
+@media only screen and (max-width: 400px) {
+    .fas {
+     display: none;
+    }
+}
+@media only screen and (max-width: 352px) {
+    .fas {
+        display: none;
+    }
+    .header > .input-container > input {
+        width: 90px;
+    }
+}

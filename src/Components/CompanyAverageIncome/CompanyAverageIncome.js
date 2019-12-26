@@ -23,7 +23,7 @@ class CompanyAverageIncome extends Component {
         const totalIncome = this.state.companiesIncome && this.state.companiesIncome.reduce(function(prev, cur) {
             return parseInt(prev) + parseInt(cur.value);
           }, 0);
-        const averageIncome = this.state.companiesIncome && totalIncome / this.state.companiesIncome.length;
+        const averageIncome = totalIncome / this.state.companiesIncome.length;
         return(
             <>
                 <th>{averageIncome}</th>

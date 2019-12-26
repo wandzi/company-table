@@ -20,14 +20,25 @@ class CompanyLastMonthIncome extends Component {
     }
     
     render() {
+        /*
+        // Calculations to get last month
         const currentDate = new Date();
         const month = currentDate.getMonth();
         currentDate.setMonth(currentDate.getMonth() - 1);
         while (currentDate.getMonth() === month) {
             currentDate.setDate(currentDate.getDate() - 1);
         }
-        console.log(currentDate.toISOString());
+        // Last month date in miliseconds
+        let lastMonthInMiliseconds = currentDate.getTime();
+        //Current Date in miliseconds
+        let currentDateInMiliseconds = new Date();
+        currentDateInMiliseconds.getTime();
+
         const totalIncome = this.state.companiesIncome && this.state.companiesIncome;
+
+            totalIncome.filter(({date}) => date.getTime() >= lastMonthInMiliseconds)
+            .reduce((prev, cur) => prev + cur.value);
+        */
         return(
             <>
                 <th>-</th>

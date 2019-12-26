@@ -1,7 +1,9 @@
 .table {
   width: 100vw;
   height: 100%;
-  color: #065DFF;
+  margin-top: 2px;
+  border-collapse: collapse !important;
+  color: #649AFF;
   background: #FFFFFF;
   font-size: 0.6rem;
   cursor: default;
@@ -10,13 +12,38 @@
   font-size: 0.78rem;
   font-weight: bold;
   cursor: pointer;
-  background-color: #E4E4E4;
+  background-color: #3A7FFF;
+  color: #FFFFFF;
+  border: none !important;
   outline: none;
 }
-tr {
-  border: none;
+thead > tr > th {
+  padding: 1px;
+}
+th {
+  padding: 6px;
+}
+tr{
+  border-bottom: 1px solid #DDDDDD;
 }
 .hover-row:hover {
-  background-color: #AFAFAF;
+  background-color: #649AFF !important;
   color: #FFFFFF;
+}
+
+@media only screen and (min-width: 540px) {
+  .table {
+    font-size: 0.8rem;
+  }
+  th {
+    padding: 15px
+  }
+  .table > thead {
+    font-size: 0.85rem;
+  }
+}
+@media only screen and (min-width: 863px) {
+  thead > tr > th {
+    padding: 8px;
+  }
 }
