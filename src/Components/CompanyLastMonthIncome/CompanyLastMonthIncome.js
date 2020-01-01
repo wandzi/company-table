@@ -20,28 +20,32 @@ class CompanyLastMonthIncome extends Component {
     }
     
     render() {
-        /*
-        // Calculations to get last month
-        const currentDate = new Date();
-        const month = currentDate.getMonth();
-        currentDate.setMonth(currentDate.getMonth() - 1);
-        while (currentDate.getMonth() === month) {
-            currentDate.setDate(currentDate.getDate() - 1);
+        const today = new Date();
+        let lastMonth = today.getMonth() - 1;
+        let relevantYear = today.getYear();
+        
+        if (lastMonth === -1) {
+          relevantYear--;
+          lastMonth = 11;
         }
-        // Last month date in miliseconds
-        let lastMonthInMiliseconds = currentDate.getTime();
-        //Current Date in miliseconds
-        let currentDateInMiliseconds = new Date();
-        currentDateInMiliseconds.getTime();
+        
+        const lastMonthTotalIncome = this.state.companiesIncome && this.state.companiesIncome
+        .filter(i => {
+            const date = new Date(i.date);
+            return date.getMonth() === lastMonth && date.getYear() === relevantYear;
+          })
+        .reduce((prev, curr) => prev + parseFloat(curr.value), 0);
+        
+        const lastMonthTotalIncomeValue = Number(lastMonthTotalIncome);
+        let roundedValue = lastMonthTotalIncomeValue.toFixed(2);
+        
+        if(roundedValue == 0.00) {
+            roundedValue = '-';
+        }
 
-        const totalIncome = this.state.companiesIncome && this.state.companiesIncome;
-
-            totalIncome.filter(({date}) => date.getTime() >= lastMonthInMiliseconds)
-            .reduce((prev, cur) => prev + cur.value);
-        */
         return(
             <>
-                <th>-</th>
+                <th>{roundedValue}</th>
             </>
         )
     }

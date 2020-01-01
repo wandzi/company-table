@@ -3,7 +3,7 @@
   height: 100%;
   margin-top: 2px;
   border-collapse: collapse !important;
-  color: #649AFF;
+  color: #51ABFF;
   background: #FFFFFF;
   font-size: 0.6rem;
   cursor: default;
@@ -12,7 +12,7 @@
   font-size: 0.78rem;
   font-weight: bold;
   cursor: pointer;
-  background-color: #3A7FFF;
+  background-color: #51ABFF;
   color: #FFFFFF;
   border: none !important;
   outline: none;
@@ -27,7 +27,7 @@ tr{
   border-bottom: 1px solid #DDDDDD;
 }
 .hover-row:hover {
-  background-color: #649AFF !important;
+  background-color: #51ABFF !important;
   color: #FFFFFF;
 }
 

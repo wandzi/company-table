@@ -4,24 +4,16 @@ import CompanyAverageIncome from '../CompanyAverageIncome/CompanyAverageIncome';
 import CompanyLastMonthIncome from '../CompanyLastMonthIncome/CompanyLastMonthIncome';
 import './Table.css';
 
-class Table extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-     
-    }
-  }
-  
+class Table extends Component {  
   render() {
     const { companies, filter} = this.props;
 
     const companiesRowList = companies && companies
       .filter( company => {
-        return [company.name.toLowerCase().indexOf(filter.toLowerCase()) && company.city.toLowerCase().indexOf(filter.toLowerCase())]  >= 0
+        return [company.name.toLowerCase().indexOf(filter.toLowerCase()) && company.city.toLowerCase().indexOf(filter.toLowerCase())] >= 0
       })
       .map( company => {
         return (
-
           <tr className="hover-row" key={company.id}>
               <th>{company.id}</th>
               <th>{company.name}</th>
@@ -30,7 +22,6 @@ class Table extends Component {
               <CompanyAverageIncome companyID={company.id}/>
               <CompanyLastMonthIncome companyID={company.id}/>
           </tr>
-
         );
       });
 
