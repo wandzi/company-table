@@ -38,8 +38,9 @@ class CompanyLastMonthIncome extends Component {
         
         const lastMonthTotalIncomeValue = Number(lastMonthTotalIncome);
         let roundedValue = lastMonthTotalIncomeValue.toFixed(2);
-        
-        if(roundedValue == 0.00) {
+        roundedValue = Number(roundedValue);
+
+        if(roundedValue === 0) {
             roundedValue = '-';
         }
 

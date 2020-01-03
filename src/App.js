@@ -25,7 +25,7 @@ class App extends Component {
     axios.get("https://recruitment.hal.skygate.io/companies")
     .then(res => {
       this.setState({companies: res.data});
-    })
+    });
   }
 
   inputFilter(event) {

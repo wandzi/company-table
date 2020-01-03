@@ -15,7 +15,7 @@ class CompanyTotalIncome extends Component {
         axios.get(`https://recruitment.hal.skygate.io/incomes/${this.state.companyID}`) 
         .then(res => {
             this.setState({companiesIncome: res.data.incomes});
-        })
+        });
 
     }
     
