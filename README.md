@@ -1,9 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-## Visit deployed app: https://wandzi.github.io/company-table/ 
+### Visit deployed app: https://wandzi.github.io/company-table/ 
+
+## Instalation</br>
+Make sure you have installed `npm` and `git`.<br />
+
+Create new folder for the project, then change directory to the new folder and clone repository by  </br>
+`git clone https://github.com/wandzi/company-table.git` in your console.</br>
+Next you can follow the scripts below.
 
 ## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
